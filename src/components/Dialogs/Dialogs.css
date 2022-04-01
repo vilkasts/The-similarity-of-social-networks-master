@@ -1,0 +1,50 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 1.5fr 10fr;
+}
+
+.dialog-items {
+    padding: 0 .5rem;
+    font: 1.2rem Arial;
+    line-height: 1.8rem;
+}
+
+.dialog {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.dialogLink{
+    border-radius: 3px;
+    padding-left: 5px;
+}
+
+.dialog:hover {
+    background-color: white;
+}
+
+.dialog a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    color: black;
+}
+
+.dialog a.active {
+    color: orangered;
+    font-weight: bold;
+    background-color: white;
+}
+
+.messages {
+    padding: 0 0 .5rem .5rem;
+}
+
+.message {
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    padding-left: 5px;
+    font: 1.2rem Arial;
+    border: 1px solid #71859C;
+}
