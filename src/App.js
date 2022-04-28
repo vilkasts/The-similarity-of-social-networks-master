@@ -6,15 +6,15 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
 
-function App() {
+function App({ dialogData, messageData, postsData }) {
 
   return (
     <div className='app-wrapper'>
       <Header/>
       <Nav/>
       <Routes>
-        <Route path="/Profile/*" element={<Profile/>}/>
-        <Route path="/Dialogs/*" element={<Dialogs/>}/>
+        <Route path="/Profile/*" element={<Profile postsData={postsData}/>}/>
+        <Route path="/Dialogs/*" element={<Dialogs dialogData={dialogData} messageData={messageData}/>}/>
       </Routes>
     </div>
   );
