@@ -3,37 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
+import store from "./redux/redux-store";
 
-let dialogData = [
-    {id: 1, name: 'Kolyunya'},
-    {id: 2, name: 'Vitechka'},
-    {id: 3, name: 'Alesyundra'},
-    {id: 4, name: 'Nikitiy'},
-    {id: 5, name: 'Egoriy'},
-    {id: 6, name: 'Alkashiy'},
-    {id: 7, name: 'Valeriy'}
-];
+let rerenderEntireTree = (state) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <BrowserRouter>
+                <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
+            </BrowserRouter>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
 
-let messageData = [
-    {id: 1, message: 'Gamarjoba'},
-    {id: 2, message: 'Ho'},
-    {id: 3, message: 'Genacvale'}
-];
+rerenderEntireTree(store.getState());
 
-let postsData = [
-    {id: 1, message: "Hi, how are you?"},
-    {id: 2, message: "It's, my first post?"}
-]
-
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App dialogData={dialogData}
-           messageData={messageData}
-           postsData={postsData}/>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+});
 
 

@@ -4,9 +4,9 @@ import './../Dialogs.css'
 
 const Message = ({message}) => {
   return (
-      <div className="message">
-        {message}
-      </div>
+          <div className="message">
+              {message}
+          </div>
   )
 }
 
