@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 
 const MyPosts = ({ profilePage, onPostChange, addPost }) => {
 
-    let posts = profilePage.posts.map(p => <Post message={p.message} id={p.id} />);
+    let posts = profilePage.posts.map(p => <Post message={ p.message } id={ p.id } />);
     let newPostText = profilePage.newPostText;
 
     let onSendPostClick = () => {
@@ -20,10 +20,10 @@ const MyPosts = ({ profilePage, onPostChange, addPost }) => {
         <div className='myPosts'>
             My Posts
                 <div>
-                    <textarea value={newPostText}
-                              onChange={onNewPostChange}
+                    <textarea value={ newPostText }
+                              onChange={ onNewPostChange }
                               placeholder="Enter your text"/>
-                    <button onClick={onSendPostClick}>Add post</button>
+                    <button onClick={ onSendPostClick }>Add post</button>
                 </div>
                 <div className='posts'>
                     { posts }

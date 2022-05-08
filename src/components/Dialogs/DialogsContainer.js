@@ -1,19 +1,20 @@
 import React from "react";
 import './Dialogs.css'
 import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogs-reducer";
+import { useDispatch, useSelector } from "react-redux";
 import Dialogs from "./Dialogs";
 
+const DialogsContainer = () => {
 
-const DialogsContainer = ({ store }) => {
-
-    let state = store.getState().dialogsPage;
+    let state = useSelector(state => state).dialogsPage;
+    let dispatch = useDispatch();
 
     let onSendMessage = () => {
-        store.dispatch(sendMessageCreator());
+        dispatch(sendMessageCreator());
     };
 
     let updateNewMessageChange = (text) => {
-        store.dispatch(updateNewMessageBodyCreator(text));
+        dispatch(updateNewMessageBodyCreator(text));
     };
 
     return <Dialogs onSendMessage = { onSendMessage }

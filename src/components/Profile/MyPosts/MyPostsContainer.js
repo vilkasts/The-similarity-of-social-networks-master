@@ -1,18 +1,20 @@
 import React from "react";
 import './MyPosts.css'
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/profile-reducer";
+import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/profile-reducer";
+import { useDispatch, useSelector } from "react-redux";
 import MyPosts from "./MyPosts";
 
-const MyPostsContainer = ({ store }) => {
+const MyPostsContainer = () => {
 
-    let state = store.getState().profilePage;
+    let state = useSelector(state => state).profilePage;
+    let dispatch = useDispatch();
 
     let addPost = () => {
-        store.dispatch(addPostActionCreator());
+        dispatch(addPostActionCreator());
     };
 
     let onPostChange = (text) => {
-        store.dispatch(updateNewPostTextActionCreator(text));
+        dispatch(updateNewPostTextActionCreator(text));
     };
 
   return <MyPosts addPost = { addPost }

@@ -2,10 +2,10 @@ import React from "react";
 import './../Dialogs.css'
 
 
-const Message = ({message}) => {
+const Message = ({ message }) => {
   return (
           <div className="message">
-              {message}
+              { message }
           </div>
   )
 }

@@ -3,11 +3,11 @@ import './Profile.css'
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = ({ store }) => {
+const Profile = () => {
   return (
     <div className='profileCounter'>
           <ProfileInfo/>
-          <MyPostsContainer store = { store }/>
+          <MyPostsContainer />
     </div>
   );
 }

@@ -5,8 +5,8 @@ import Message from "./Messages/Message";
 
 const Dialogs = ({ dialogsPage, onSendMessage, updateNewMessageChange }) => {
 
-    let dialogs = dialogsPage.dialogData.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messages = dialogsPage.messageData.map(m => <Message message={m.message} id={m.id} />);
+    let dialogs = dialogsPage.dialogData.map(d => <DialogItem name={ d.name } id={ d.id } />);
+    let messages = dialogsPage.messageData.map(m => <Message message={ m.message } id={ m.id } />);
     let newMessageBody = dialogsPage.newMessageBody;
 
     let onSendMessageClick = () => {

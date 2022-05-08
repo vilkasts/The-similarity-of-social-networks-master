@@ -1,11 +1,11 @@
 import React from "react";
 import './Post.css'
 
-const Post = ({message}) => {
+const Post = ({ message }) => {
 
   return (
     <div className='item'>
-      {message}
+      { message }
     </div>
 );
 }
